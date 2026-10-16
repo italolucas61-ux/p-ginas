@@ -2,6 +2,21 @@
 
 Redesign completo da landing page em Next.js App Router, React, TypeScript, Tailwind CSS e Lucide. Identidade azul-marinho e dourado, fontes Manrope e Inter hospedadas localmente, componentes reutilizáveis e conteúdo centralizado.
 
+## Visualizar e compartilhar pela Hostinger
+
+A entrega para uso direto está em **`entrega/teacher-murilo.zip`**. Extraia e abra `index.html` com dois cliques para visualizar a página no computador. O arquivo inclui estilos, fontes, ícones e interações; não precisa de Node.js, Vercel ou um servidor local para abrir essa versão.
+
+Para compartilhar com prospectos, envie esse `index.html` para `public_html/previas/teacher-murilo/` na hospedagem de `altassite.com`. Após o upload, o endereço será `https://altassite.com/previas/teacher-murilo/`. As instruções completas estão em [entrega/LEIA-ME.md](entrega/LEIA-ME.md). A publicação na Hostinger é uma etapa externa; gerar o pacote não a realiza.
+
+Para regenerar a entrega após editar a página:
+
+```bash
+npm run export:hostinger
+npm run verify:hostinger
+```
+
+O exportador usa o build de produção como fonte do HTML, reutiliza todos os 21 módulos e incorpora os recursos. A versão independente usa `scripts/standalone-runtime.js` para menu, filtros, expansão e diálogos. As verificações testam o mesmo documento carregado em memória, sem recursos de rede, e a hospedagem em uma subpasta, incluindo os sete tamanhos de tela e as interações. A abertura via `file://` foi bloqueada pela política administrativa do navegador do ambiente e não é apresentada como executada. As capturas estão em `entrega/preview-desktop.png` e `entrega/preview-mobile.png`.
+
 ## Executar
 
 Requer Node.js 24 (versão usada: 24.19.0) e npm. Use o checkout existente; cada tarefa na nuvem já é isolada e não requer um Git worktree.
