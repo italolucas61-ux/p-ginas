@@ -21,6 +21,16 @@ npm run start
 
 Nenhum banco, serviço externo ou credencial é necessário para executar o redesign. A instalação usa `registry.npmjs.org`. Todas as fontes e artes desta versão são locais.
 
+## Publicar na Vercel
+
+O arquivo `vercel.json` declara o framework Next.js, a instalação com `npm ci`, o build com `npm run build` e o diretório de saída `.next`.
+
+Importe o repositório `italolucas61-ux/p-ginas`, use a branch `main` e mantenha o diretório raiz como `./`. Nas configurações de build, selecione **Next.js**. Caso exista uma substituição manual de **Output Directory** com o valor `public`, remova essa substituição ou configure `.next`.
+
+O diretório `public` é destinado a arquivos estáticos opcionais; a saída deste build é `.next`. A mensagem “No Output Directory named public found” indica uma configuração de saída incompatível na hospedagem.
+
+Após corrigir as configurações, faça o deploy do commit mais recente da `main`, que contém `vercel.json`. Reimplantar um commit anterior mantém a configuração antiga. Um build local aprovado confirma a geração dos arquivos, mas não confirma a publicação na conta da Vercel.
+
 ## Validação
 
 ```bash
